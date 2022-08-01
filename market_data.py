@@ -199,7 +199,7 @@ def reset_market_data(directory_name=config.DATA_DIR, lst_tickers=['VOD.L', '888
 if __name__ == "__main__":
     # stuff only to run when not called via 'import' here
     reset_market_data()
-    
+    # del_dir_and_copy_files()
 
 
 

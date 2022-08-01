@@ -31,7 +31,6 @@ def my_form_post():
 @app.route('/fn_runner', methods=['POST'])
 def fn_runner():
     result = request.get_json()
-
     module_name = result['module']
     function_name = result['function']
     
