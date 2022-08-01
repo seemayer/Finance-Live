@@ -1,0 +1,32 @@
+<head>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src='/static/scripts.js'></script>
+</head>
+<body>
+
+    <button onclick='fnCaller({"module":"market_data","function":"reset_market_data"})'>Reset Market Data</button></br>
+    <button onclick='fnCaller({"module":"market_data","function":"download_naked_trades","parameters":{"earliest_date":"2017-01-01"}})'>Download Naked Trades</button></br>
+    <button onclick='fnCaller({"module":"screens","function":"relative_strength"})'>Relative Strength Screen</button></br>
+
+    <form method="POST">
+        <textarea rows = "5" cols = "60" name = "text">Enter details here...</textarea><br>
+        <input type="submit" value="Download data for tickers in box"/>
+    </form>
+    
+    <button onclick='fnCaller({"module":"screens","function":"elder_divergence"})'>Elder Divergence Screen</button></br>
+    
+    Currently in data folder: </br>
+    <table>
+        {% for day in files %}
+            <tr><td>{{ day }} </td></tr>
+        {% endfor %}
+    </table> 
+    
+    Currently in screen passed folder: </br>
+    <table>
+        {% for day in screened %}
+            <tr><td>{{ day }} </td></tr>
+        {% endfor %}
+    </table> 
+</body>
