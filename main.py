@@ -9,8 +9,7 @@ app = Flask(__name__)
 @app.route('/')
 def home_page():
     # load homepage and send data to be displayed on page
-    return render_template('layout.html')
-    # return render_template('index.html', files=os.listdir('./data'), screened=os.listdir('./screen passed'))
+    return render_template('index.html', files=os.listdir('./data'), screened=os.listdir('./screen passed'))
 
 @app.route('/', methods=['POST'])
 def my_form_post():

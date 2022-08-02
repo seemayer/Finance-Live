@@ -1,49 +1,62 @@
 <head>
-    <link rel="stylesheet" href="/static/styles.css">
+<!--     <link rel="stylesheet" href="/static/styles.css"> -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src='/static/scripts.js'></script>
 </head>
 <body>
 
-    <header>This is a header</header>
+<header class="w3-container w3-teal">
+  <h1>Header</h1>
+</header>
 
-    <main>
-    <nav>
-    <button onclick='fnCaller({"module":"market_data","function":"reset_market_data"})'>Reset Market Data</button></br>
-    <button onclick='fnCaller({"module":"market_data","function":"download_naked_trades","parameters":{"earliest_date":"2017-01-01"}})'>Download Naked Trades</button></br>
-    <button onclick='fnCaller({"module":"screens","function":"relative_strength"})'>Relative Strength Screen</button></br>
-    </nav>
-    <pre><code>copy([].map.call($$('[id$=c1]'), function(el) {return el.innerHTML}).join())</code></pre>
+
     
+    <div class = "w3-barr">
+        <button onclick='fnCaller({"module":"market_data","function":"reset_market_data"})' class="w3-bar-item w3-button w3-teal">Reset Market Data</button>
+        <button onclick='fnCaller({"module":"market_data","function":"download_naked_trades","parameters":{"earliest_date":"2017-01-01"}})' class="w3-bar-item w3-button w3-teal">Download Naked Trades</button>
+        <button onclick='fnCaller({"module":"screens","function":"relative_strength"})'class="w3-bar-item w3-button w3-teal">Relative Strength Screen</button>
+    </div>
+
+ <div class="w3-cell-row">
+
+    <div class="w3-container w3-red w3-cell">
+        Currently in data folder: </br>
+        <table class="w3-table w3-striped w3-border">
+            {% for day in files %}
+                <tr><td>{{ day }} </td></tr>
+            {% endfor %}
+        </table> 
+    </div>
+    
+    <div class="w3-container w3-cell">Main Content</br>
+    <div class="w3-container w3-pale-green w3-bottombar w3-border-green w3-border">copy([].map.call($$('[id$=c1]'), function(el) {return el.innerHTML}).join())</div>
+    </br>
     <form method="POST">
         <textarea rows = "5" cols = "60" name = "text">Enter details here...</textarea><br>
         <input type="submit" value="Download data for tickers in box"/>
     </form>
     
     <button onclick='fnCaller({"module":"screens","function":"elder_divergence"})'>Elder Divergence Screen</button></br>
-    
-    Currently in data folder: </br>
-    <table>
-        {% for day in files %}
-            <tr><td>{{ day }} </td></tr>
-        {% endfor %}
-    </table> 
-    
-    Currently in screen passed folder: </br>
-    <table>
-        {% for day in screened %}
-            <tr><td>{{ day }} </td></tr>
-        {% endfor %}
-    </table> 
+    </div>
 
-    </main>
+    <div class="w3-container w3-red w3-cell">
+        
+        Currently in screen passed folder: </br>
+        <table class="w3-table w3-striped w3-border">
+            {% for day in screened %}
+                <tr><td>{{ day }} </td></tr>
+            {% endfor %}
+        </table> 
+    </div>
+ </div>
 
-<footer>
-        <nav>
-            <h3>Useful Links</h3>
-            <a href="#page1">Page 1</a>
-            <a href="#page2">Page 2</a>
-            <a href="#page3">Page 3</a>
-</nav>    
-    </footer>
+<footer class="w3-container w3-teal">
+          <a href="#page1" class="w3-bar-item w3-button w3-mobile">Page 1</a>
+        <a href="#page2" class="w3-bar-item w3-button w3-mobile">Page 2</a>
+        <a href="#page3" class="w3-bar-item w3-button w3-mobile">Page 3</a>
+</footer>
+
+
+
 </body>
