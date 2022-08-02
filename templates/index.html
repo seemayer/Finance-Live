@@ -5,10 +5,16 @@
 </head>
 <body>
 
+    <header>This is a header</header>
+
+    <main>
+    <nav>
     <button onclick='fnCaller({"module":"market_data","function":"reset_market_data"})'>Reset Market Data</button></br>
     <button onclick='fnCaller({"module":"market_data","function":"download_naked_trades","parameters":{"earliest_date":"2017-01-01"}})'>Download Naked Trades</button></br>
     <button onclick='fnCaller({"module":"screens","function":"relative_strength"})'>Relative Strength Screen</button></br>
-
+    </nav>
+    <pre><code>copy([].map.call($$('[id$=c1]'), function(el) {return el.innerHTML}).join())</code></pre>
+    
     <form method="POST">
         <textarea rows = "5" cols = "60" name = "text">Enter details here...</textarea><br>
         <input type="submit" value="Download data for tickers in box"/>
@@ -29,4 +35,15 @@
             <tr><td>{{ day }} </td></tr>
         {% endfor %}
     </table> 
+
+    </main>
+
+<footer>
+        <nav>
+            <h3>Useful Links</h3>
+            <a href="#page1">Page 1</a>
+            <a href="#page2">Page 2</a>
+            <a href="#page3">Page 3</a>
+</nav>    
+    </footer>
 </body>

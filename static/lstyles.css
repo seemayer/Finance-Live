@@ -1,0 +1,6 @@
+*{margin:0px;box-sizing:border-box;}
+div{padding:5px;border:1px solid tomato;}
+div.column{float:left;height:200px;}
+div.side{width:15%;}
+div.main{width:70%;}
+div.footer{clear:both;}
