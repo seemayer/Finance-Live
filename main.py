@@ -9,7 +9,7 @@ app = Flask(__name__)
 @app.route('/')
 def home_page():
     # load homepage and send data to be displayed on page
-    return render_template('index.html', files=os.listdir('./data'), screened=os.listdir('./screen passed'))
+    return render_template('index.html', files=os.listdir('./data'), screened=os.listdir('./screen passed'),log="test log")
 
 @app.route('/', methods=['POST'])
 def my_form_post():
@@ -46,7 +46,9 @@ def fn_runner():
         myobject = func() # if no parameters then don't
 
     print(f'object returned from function = {myobject} of type {type(myobject)}')
+    print('about to render template')
     
+    # return jsonify({"logtext":"this is my log response"})
     return jsonify(myobject)
 
 

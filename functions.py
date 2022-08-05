@@ -16,6 +16,8 @@ tickers = md.get_list_of_market_tickers('SETS')
 md.reset_market_data(lst_tickers=tickers)
 
 
+
+
 def short_downward_channel():
     # Reset screen passed folder    
     md.del_dir_and_copy_files(src_dir = config.DATA_DIR, tar_dir = config.SCREEN_DIR)

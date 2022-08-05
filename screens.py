@@ -5,6 +5,11 @@ import technical_indicators as ti
 import market_data as md
 import yfinance as yf
 
+def testfn():
+    print('test function')
+    return ({"logtext":"hello from function"})
+
+
 def weekly_impulse_not_equal(colour = 'red'):
 
   #Screen 1 - Weekly impulse

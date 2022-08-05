@@ -3,42 +3,80 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src='/static/scripts.js'></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 
-<header class="w3-container w3-teal">
-  <h1>Header</h1>
-</header>
+    <header class="w3-container w3-teal">
+        <h1>Header</h1>
+    </header>
 
+    <nav class = "w3-bar">
+        <button 
+            class="w3-bar-item w3-button w3-teal"
+            onclick='fnCaller({"module":"market_data","function":"reset_market_data"})'>
+            Reset Market Data
+        </button>
+        <button 
+            class="w3-bar-item w3-button w3-teal"
+            onclick='fnCaller({"module":"market_data","function":"download_naked_trades","parameters":{"earliest_date":"2017-01-01"}})'>
+            Download Naked Trades
+        </button>
+        <button 
+            class="w3-bar-item w3-button w3-teal"
+            onclick='fnCaller({"module":"screens","function":"relative_strength"})'>
+            Relative Strength Screen
+        </button>
+    </nav>
 
-    
-    <div class = "w3-barr">
-        <button onclick='fnCaller({"module":"market_data","function":"reset_market_data"})' class="w3-bar-item w3-button w3-teal">Reset Market Data</button>
-        <button onclick='fnCaller({"module":"market_data","function":"download_naked_trades","parameters":{"earliest_date":"2017-01-01"}})' class="w3-bar-item w3-button w3-teal">Download Naked Trades</button>
-        <button onclick='fnCaller({"module":"screens","function":"relative_strength"})'class="w3-bar-item w3-button w3-teal">Relative Strength Screen</button>
-    </div>
-
- <div class="w3-cell-row">
+<main class="w3-cell-row">
 
     <div class="w3-container w3-red w3-cell">
         Currently in data folder: </br>
-        <table class="w3-table w3-striped w3-border">
+        <table class="w3-table w3-striped w3-border w3-hoverable">
             {% for day in files %}
                 <tr><td>{{ day }} </td></tr>
             {% endfor %}
         </table> 
     </div>
+
+    <div class="w3-container w3-card w3-light-grey"> 
+        <h4>Main Content</h4>
+        
+        <div class="w3-code jsHigh" id="Sharepad">copy([].map.call($$('[id$=c1]'), function(el) {return el.innerHTML}).join());</div>
+        <button class="w3-button w3-teal" onclick='copyText("Sharepad")'>Copy</button>
     
-    <div class="w3-container w3-cell">Main Content</br>
-    <div class="w3-container w3-pale-green w3-bottombar w3-border-green w3-border">copy([].map.call($$('[id$=c1]'), function(el) {return el.innerHTML}).join())</div>
-    </br>
-    <form method="POST">
-        <textarea rows = "5" cols = "60" name = "text">Enter details here...</textarea><br>
-        <input type="submit" value="Download data for tickers in box"/>
-    </form>
-    
-    <button onclick='fnCaller({"module":"screens","function":"elder_divergence"})'>Elder Divergence Screen</button></br>
+            
+        <form method="POST">
+            <textarea rows = "5" cols = "60" name = "text">Enter details here...</textarea><br>
+            <input class="w3-bar-item w3-button w3-teal" type="submit" value="Download data for tickers in box"/>
+        </form>
+        
+        <button 
+            class="w3-bar-item w3-button w3-teal" 
+            onclick='fnCaller({"module":"screens","function":"elder_divergence"})'>
+            Elder Divergence Screen
+        </button>
+
+        <button 
+            class="w3-bar-item w3-button w3-teal" 
+            onclick='fnCaller({"module":"market_data","function":"reset_market_data"})'>
+            Reset Market Data
+        </button>
+        <br>
+            
+        <button 
+            class="w3-bar-item w3-button w3-teal" 
+            onclick='fnCaller({"module":"screens","function":"testfn"})'>
+            Test Function
+        </button>
+        <br>
+        
+        <div id="mylog">
+
+        </div>
     </div>
+    
 
     <div class="w3-container w3-red w3-cell">
         
@@ -49,7 +87,7 @@
             {% endfor %}
         </table> 
     </div>
- </div>
+</main>
 
 <footer class="w3-container w3-teal">
           <a href="#page1" class="w3-bar-item w3-button w3-mobile">Page 1</a>
@@ -58,5 +96,25 @@
 </footer>
 
 
+<script src="https://www.w3schools.com/lib/w3codecolor.js"></script>
+
+<script>
+w3CodeColor();
+</script>
+
+    <script>
+    function copyText(idName) {
+      /* Get the text field */
+      var copyText = document.getElementById(idName).textContent;
+
+       /* Copy the text inside the text field */
+      navigator.clipboard.writeText(copyText);
+
+      /* Alert the copied text */
+      alert("Copied the text: " + copyText);
+            
+        }
+    </script>
+    
 
 </body>

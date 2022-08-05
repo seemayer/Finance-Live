@@ -132,6 +132,14 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [[package]]
+name = "et-xmlfile"
+version = "1.1.0"
+description = "An implementation of lxml.xmlfile for the standard library"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
 name = "fake-useragent"
 version = "0.1.11"
 description = "Up to date simple useragent faker with real world database"
@@ -283,6 +291,17 @@ description = "NumPy is the fundamental package for array computing with Python.
 category = "main"
 optional = false
 python-versions = ">=3.8"
+
+[[package]]
+name = "openpyxl"
+version = "3.0.10"
+description = "A Python library to read/write Excel 2010 xlsx/xlsm files"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+et-xmlfile = "*"
 
 [[package]]
 name = "pandas"
@@ -550,6 +569,19 @@ python-versions = ">=3.7"
 watchdog = ["watchdog"]
 
 [[package]]
+name = "xlrd"
+version = "2.0.1"
+description = "Library for developers to extract data from Microsoft Excel (tm) .xls spreadsheet files"
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*"
+
+[package.extras]
+test = ["pytest-cov", "pytest"]
+docs = ["sphinx"]
+build = ["twine", "wheel"]
+
+[[package]]
 name = "yahoo-fin"
 version = "0.8.9.1"
 description = "Download historical stock prices (daily / weekly / monthly), realtime-prices, fundamentals data, income statements, cash flows, analyst info, current cryptocurrency prices, option chains, earnings history, and more with yahoo_fin."
@@ -605,7 +637,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8.0,<3.9"
-content-hash = "33c60309f41e886769c0a93b80c21d11146b2b3bd86e3c7b34cfa0eb313a2392"
+content-hash = "ef70d5743ec43c0b8e4f385bd69c33f7219718534656b45c8327ac2cf62dafff"
 
 [metadata.files]
 aiohttp = []
@@ -620,6 +652,7 @@ charset-normalizer = []
 click = []
 colorama = []
 cssselect = []
+et-xmlfile = []
 fake-useragent = []
 feedparser = []
 finplot = []
@@ -634,6 +667,7 @@ markupsafe = []
 multidict = []
 multitasking = []
 numpy = []
+openpyxl = []
 pandas = []
 parse = []
 pyee = []
@@ -657,6 +691,7 @@ urllib3 = []
 w3lib = []
 websockets = []
 werkzeug = []
+xlrd = []
 yahoo-fin = []
 yarl = []
 yfinance = []
