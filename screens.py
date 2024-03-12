@@ -87,9 +87,10 @@ def elder_divergence():
     df = md.df_from_csv(file.path)
   
     #calculate indicators for each ticker and add to dataframe
+    
     try:
       df = ti.add_elder_bull_divergence(df, period=40)
-  
+    
       #check last 5 days to see if screen was passed
       screenpassed = any(df.divergence.tail(5))
       print(file.name)

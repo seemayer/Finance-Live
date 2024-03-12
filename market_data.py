@@ -191,8 +191,8 @@ def resample_weekly(df):
 
 ## Routines ##
 
-# def reset_market_data(directory_name=config.DATA_DIR, lst_tickers=['VOD.L','IBPO.L']):
-def reset_market_data():
+def reset_market_data(directory_name=config.DATA_DIR, lst_tickers=['VOD.L','IBPO.L']):
+# def reset_market_data():
     print('hello')
     lst_tickers = get_list_of_market_tickers('SETS')
     delete_files_in_dir(directory_name)

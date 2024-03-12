@@ -88,7 +88,7 @@ def add_elder_bull_divergence(main_df, period=40):
 
     # // Bullish divergence
 
-    df.at[df.index[0], ['state']] = '|0,0,0,0|'  # set first item to zero state
+    df.at[df.index[0], 'state'] = '|0,0,0,0|'  # set first item to zero state
 
     # get location of columns used in below loop based on name
     istate = df.columns.get_loc('state')
