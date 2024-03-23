@@ -34,8 +34,8 @@
     <div class="w3-container w3-red w3-cell">
         Currently in data folder: </br>
         <table class="w3-table w3-striped w3-border w3-hoverable">
-            {% for day in files %}
-                <tr><td>{{ day }} </td></tr>
+            {% for file in files|sort %}
+                <tr><td>{{ file|replace(".csv","") }} </td></tr>
             {% endfor %}
         </table> 
     </div>
@@ -82,8 +82,8 @@
         
         Currently in screen passed folder: </br>
         <table class="w3-table w3-striped w3-border">
-            {% for day in screened %}
-                <tr><td>{{ day }} </td></tr>
+            {% for file in screened|sort %}
+                <tr><td>{{ file|replace(".csv","") }} </td></tr>
             {% endfor %}
         </table> 
     </div>
