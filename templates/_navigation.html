@@ -1,0 +1,40 @@
+{# templates/_navigation.html #}
+
+<nav class = "w3-bar">
+    <button 
+        class="w3-bar-item w3-button w3-teal"
+        onclick='fnCaller({"module":"market_data","function":"reset_market_data"})'>
+        Reset Market Data
+    </button>
+    <button 
+        class="w3-bar-item w3-button w3-teal"
+        onclick='fnCaller({"module":"market_data","function":"download_naked_trades","parameters":{"earliest_date":"2017-01-01"}})'>
+        Download Naked Trades
+    </button>
+    <button 
+        class="w3-bar-item w3-button w3-teal"
+        onclick='fnCaller({"module":"screens","function":"relative_strength"})'>
+        Relative Strength Screen
+    </button>
+    <button 
+        class="w3-bar-item w3-button w3-teal" 
+        onclick='fnCaller({"module":"screens","function":"elder_divergence"})'>
+        Elder Divergence Screen
+    </button>
+    <button
+        class="w3-bar-item w3-button w3-teal" 
+        onclick='fnCaller({"module":"market_data","function":"reset_market_data"})'>
+        Reset Market Data
+    </button>
+    <button 
+        class="w3-bar-item w3-button w3-teal" 
+        onclick='fnCaller({"module":"screens","function":"testfn"})'>
+        Test Function
+    </button>
+
+
+
+
+
+
+</nav>
